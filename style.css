@@ -107,7 +107,7 @@ body {
 /* ---------- Profile Photo ---------- */
 
 .photo {
-    margin: 4vh 0 4vh 0;
+    margin: 5vh 0 4vh 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -548,4 +548,5 @@ footer a:focus-visible::after {
     75% {
         transform: translate(-50px, 50px);
     }
+
 }
