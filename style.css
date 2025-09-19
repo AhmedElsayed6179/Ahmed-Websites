@@ -1,0 +1,551 @@
+/* ---------- Variables ---------- */
+:root {
+    --primary: #306ABF;
+    --primary-light: #7FBFFF;
+    --background-dark: #1a202c;
+    --text-light: #fff;
+    --text-dark: #000;
+}
+
+/* ---------- Base Styles ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* ---------- Particles ---------- */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+/* ---------- Preloader ---------- */
+#preloader {
+    position: fixed;
+    inset: 0;
+    background: rgba(26, 32, 44, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loader {
+    width: 80px;
+    height: 80px;
+    border: 6px solid transparent;
+    border-top-color: var(--primary-light);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    position: relative;
+}
+
+.loader::before,
+.loader::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top: -10px;
+    left: -10px;
+    animation: orbit 1s linear infinite;
+}
+
+.loader::before {
+    background: var(--primary-light);
+}
+
+.loader::after {
+    background: var(--text-light);
+    animation-delay: 0.5s;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes orbit {
+    0% {
+        transform: rotate(0deg) translateX(50px) rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg) translateX(50px) rotate(-360deg);
+    }
+}
+
+/* ---------- Profile Photo ---------- */
+
+.photo {
+    margin: 4vh 0 4vh 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.photo img {
+    width: 150px;
+    max-width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 3px solid var(--text-light);
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.photo img:hover {
+    transform: scale(1.05);
+}
+
+/* ---------- Content ---------- */
+.content {
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    max-width: 600px;
+    width: 100%;
+}
+
+.name {
+    margin-top: 1rem;
+}
+
+.name h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.name h2 {
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--primary-light);
+    border-right: 2px solid var(--primary-light);
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0ch;
+    margin: 0 auto;
+    margin-top: 1rem;
+    animation: typing 4s steps(16, end) forwards, blink 0.7s step-end infinite;
+    text-align: center;
+}
+
+@keyframes typing {
+    from {
+        width: 0ch;
+    }
+
+    to {
+        width: 16ch;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}
+
+/* ---------- Buttons ---------- */
+.buttons ul {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.buttons li a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--text-light);
+    color: var(--text-dark);
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.buttons li a:hover,
+.buttons li a:focus-visible {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    outline: none;
+}
+
+.buttons li a span {
+    flex-grow: 1;
+    margin-left: 0.75rem;
+    text-align: left;
+}
+
+/* Icon sizes */
+.big-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+.sml-icon {
+    font-size: 1rem;
+    margin-left: 1vw;
+    flex-shrink: 0;
+}
+
+/* Individual button colors */
+.github a {
+    color: var(--text-dark);
+}
+
+.github a:hover {
+    color: var(--text-light);
+    background: url('img/bkj-btn1.jpg') no-repeat center/cover;
+}
+
+.linkedin a {
+    color: #0071e1;
+}
+
+.linkedin a:hover {
+    color: var(--text-light);
+    background: url('img/bkj-btn4.jpg') no-repeat center/cover;
+}
+
+.instagram a {
+    color: #294bd2;
+}
+
+.instagram a:hover {
+    color: var(--text-light);
+    background: url('img/bkj-btn2.jpg') no-repeat center/cover;
+}
+
+.facebook a {
+    color: #2e67eb;
+}
+
+.facebook a:hover {
+    color: var(--text-light);
+    background: url('img/bkj-btn3.jpg') no-repeat center/cover;
+}
+
+.twitter a {
+    color: var(--text-dark);
+}
+
+.twitter a:hover {
+    color: var(--text-light);
+    background: url('img/bkj-btn5.jpg') no-repeat center/cover;
+}
+
+/* Custom Sites */
+.portfolio a,
+.send-message a {
+    font-size: 1rem;
+    color: #2e5146;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.portfolio a img,
+.send-message a img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.portfolio a:hover,
+.send-message a:hover {
+    color: var(--text-light);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.portfolio a:hover {
+    background: url('img/Portfolio/background.png') no-repeat center/cover;
+}
+
+.send-message a:hover {
+    background: url('img/SendMessage/background.png') no-repeat center/cover;
+}
+
+/* ---------- Social Icons ---------- */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2vh 0;
+}
+
+.social-icons a {
+    color: var(--text-light);
+    font-size: 3vh;
+    transition: transform 0.2s ease, color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.social-icons a:hover,
+.social-icons a:focus-visible {
+    transform: scale(1.3);
+    outline: none;
+}
+
+.phone a:hover {
+    color: #19a3e9;
+}
+
+.whatsapp a:hover {
+    color: #00ca4a;
+}
+
+.telegram a:hover {
+    color: #2bb8ff;
+}
+
+.mail a:hover {
+    color: #fbbc05;
+}
+
+.pinterest a:hover {
+    color: #d40820;
+}
+
+.tiktok a:hover {
+    color: #000;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    background: var(--background-dark);
+    box-shadow: 0 -5px 55px rgba(0, 0, 0, 0.18);
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-top: 10vh;
+    color: var(--text-light);
+}
+
+footer a {
+    color: var(--text-light);
+    text-decoration: none;
+    letter-spacing: -0.2px;
+    position: relative;
+    padding-bottom: 2px;
+}
+
+footer a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    background: var(--primary-light);
+    transition: width 0.3s ease;
+}
+
+footer a:hover::after,
+footer a:focus-visible::after {
+    width: 100%;
+}
+
+.copyRights {
+    margin-top: -1vh;
+}
+
+/* ---------- Responsive (Mobile) ---------- */
+@media (max-width: 480px) {
+    .photo img {
+        width: 150px;
+        max-width: 100%;
+    }
+
+    .name h1 {
+        font-size: 1.8rem;
+    }
+
+    .name h2 {
+        font-size: 1.1rem;
+        margin-top: 0.2rem;
+    }
+
+    .buttons li a {
+        width: 90vw;
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .big-icon {
+        font-size: 1.3rem;
+    }
+
+    .sml-icon {
+        font-size: 0.8rem;
+    }
+
+    .portfolio a img,
+    .send-message a img {
+        width: 28px;
+        height: 28px;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+}
+
+/* New Background Styles */
+.bg-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.bg-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg,
+            rgba(26, 32, 44, 0.9) 0%,
+            rgba(15, 17, 26, 0.95) 50%,
+            rgba(26, 32, 44, 0.9) 100%);
+}
+
+.bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.15;
+    background-image:
+        radial-gradient(circle at 25% 25%,
+            var(--primary-light) 0%,
+            transparent 20%),
+        radial-gradient(circle at 75% 75%,
+            var(--primary) 0%,
+            transparent 20%);
+    background-size: 300px 300px;
+    animation: bgMove 30s linear infinite;
+}
+
+.bg-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.bg-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.15;
+}
+
+.bg-shape-1 {
+    width: 500px;
+    height: 500px;
+    background: var(--primary-light);
+    top: -100px;
+    left: -100px;
+    animation: float 15s ease-in-out infinite;
+}
+
+.bg-shape-2 {
+    width: 400px;
+    height: 400px;
+    background: var(--primary);
+    bottom: -150px;
+    right: -100px;
+    animation: float 18s ease-in-out infinite reverse;
+}
+
+.bg-shape-3 {
+    width: 300px;
+    height: 300px;
+    background: #306ABF;
+    top: 40%;
+    right: 20%;
+    animation: float 12s ease-in-out infinite 2s;
+}
+
+@keyframes bgMove {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 300px 300px;
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(50px, 50px);
+    }
+
+    50% {
+        transform: translate(0, 100px);
+    }
+
+    75% {
+        transform: translate(-50px, 50px);
+    }
+}
