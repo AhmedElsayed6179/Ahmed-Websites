@@ -382,7 +382,7 @@ footer a::after {
     bottom: 0;
     height: 2px;
     width: 0%;
-    background: var(--primary-light);
+    background: var(--text-light);
     transition: width 0.3s ease;
 }
 
@@ -532,4 +532,5 @@ footer a:focus-visible::after {
         transform: translate(100px, -100px) rotate(360deg);
     }
 }
+
 
