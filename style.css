@@ -294,10 +294,6 @@ body {
     object-fit: contain;
 }
 
-.contact-me a img {
-    border-radius: none;
-}
-
 .portfolio a:hover,
 .send-message a:hover,
 .contact-me a:hover{
