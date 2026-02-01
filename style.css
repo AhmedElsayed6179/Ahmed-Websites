@@ -434,7 +434,8 @@ footer a:focus-visible::after {
     }
 
     .portfolio a img,
-    .send-message a img {
+    .send-message a img,
+    .contact-me a img {
         width: 28px;
         height: 28px;
     }
