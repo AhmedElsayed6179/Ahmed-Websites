@@ -276,7 +276,8 @@ body {
 
 /* Custom Sites */
 .portfolio a,
-.send-message a {
+.send-message a,
+.contact-me a{
     font-size: 1rem;
     color: #2e5146;
     display: flex;
@@ -285,7 +286,8 @@ body {
 }
 
 .portfolio a img,
-.send-message a img {
+.send-message a img,
+.contact-me a img {
     width: 40px;
     height: 40px;
     border-radius: 8px;
@@ -293,7 +295,8 @@ body {
 }
 
 .portfolio a:hover,
-.send-message a:hover {
+.send-message a:hover,
+.contact-me a:hover{
     color: var(--text-light);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
@@ -304,6 +307,10 @@ body {
 
 .send-message a:hover {
     background: url('img/SendMessage/background.png') no-repeat center/cover;
+}
+
+.contact-me a:hover {
+    background: url('img/Contact/background.jpg') no-repeat center/cover;
 }
 
 /* ---------- Social Icons ---------- */
@@ -533,6 +540,7 @@ footer a:focus-visible::after {
         transform: translate(100px, -100px) rotate(360deg);
     }
 }
+
 
 
 
