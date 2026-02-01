@@ -286,11 +286,16 @@ body {
 }
 
 .portfolio a img,
-.send-message a img,
-.contact-me a img {
+.send-message a img {
     width: 40px;
     height: 40px;
     border-radius: 8px;
+    object-fit: contain;
+}
+
+.contact-me a img {
+    width: 40px;
+    height: 40px;
     object-fit: contain;
 }
 
