@@ -283,6 +283,7 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
+    white-space: nowrap;
 }
 
 .portfolio a img,
