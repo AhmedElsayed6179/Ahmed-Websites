@@ -286,6 +286,10 @@ body {
     white-space: nowrap;
 }
 
+.portfolio a span {
+    white-space: nowrap;
+}
+
 .portfolio a img,
 .send-message a img,
 .contact-me a img {
