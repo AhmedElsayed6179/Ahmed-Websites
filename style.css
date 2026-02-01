@@ -443,10 +443,6 @@ footer a:focus-visible::after {
     footer {
         font-size: 0.9rem;
     }
-
-    span {
-        white-space: nowrap !important;
-    }
 }
 
 /* ---------- Background Wrapper ---------- */
