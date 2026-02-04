@@ -276,8 +276,7 @@ body {
 
 /* Custom Sites */
 .portfolio a,
-.send-message a,
-.contact-me a{
+.send-message a {
     font-size: 1rem;
     color: #2e5146;
     display: flex;
@@ -296,7 +295,7 @@ body {
 
 .portfolio a:hover,
 .send-message a:hover,
-.contact-me a:hover{
+.contact-me a:hover {
     color: var(--text-light);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
@@ -541,7 +540,3 @@ footer a:focus-visible::after {
         transform: translate(100px, -100px) rotate(360deg);
     }
 }
-
-
-
-
